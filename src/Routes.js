@@ -31,33 +31,36 @@ const HomeScreen = () => {
 
 const NetworkScreen = () => {
   return (
-    <HomeStack.Navigator screenOptions={{headerShown: false}}>
-      <HomeStack.Screen name={Screens.NETWORK} component={Network} />
-    </HomeStack.Navigator>
+    <NetworkStack.Navigator screenOptions={{headerShown: false}}>
+      <NetworkStack.Screen name={Screens.NETWORK} component={Network} />
+    </NetworkStack.Navigator>
   );
 };
 
 const JobScreen = () => {
   return (
-    <HomeStack.Navigator screenOptions={{headerShown: false}}>
-      <HomeStack.Screen name={Screens.JOB} component={Job} />
-    </HomeStack.Navigator>
+    <JobStack.Navigator screenOptions={{headerShown: false}}>
+      <JobStack.Screen name={Screens.JOB} component={Job} />
+    </JobStack.Navigator>
   );
 };
 
 const PostScreen = () => {
   return (
-    <HomeStack.Navigator screenOptions={{headerShown: false}}>
-      <HomeStack.Screen name={Screens.POST} component={Post} />
-    </HomeStack.Navigator>
+    <PostStack.Navigator screenOptions={{headerShown: false}}>
+      <PostStack.Screen name={Screens.POST} component={Post} />
+    </PostStack.Navigator>
   );
 };
 
 const NotificationScreen = () => {
   return (
-    <HomeStack.Navigator screenOptions={{headerShown: false}}>
-      <HomeStack.Screen name={Screens.NOTIFICATION} component={Notification} />
-    </HomeStack.Navigator>
+    <NetworkStack.Navigator screenOptions={{headerShown: false}}>
+      <NetworkStack.Screen
+        name={Screens.NOTIFICATION}
+        component={Notification}
+      />
+    </NetworkStack.Navigator>
   );
 };
 
@@ -95,13 +98,7 @@ const Routes = () => {
             header(navigation, route, 'people', 'Network')
           }
         />
-        <Tab.Screen
-          name={Screens.JOB_STACK}
-          component={JobScreen}
-          options={({navigation, route}) =>
-            header(navigation, route, 'briefcase', 'Job')
-          }
-        />
+
         <Tab.Screen
           name={Screens.POST_STACK}
           component={PostScreen}
@@ -122,6 +119,14 @@ const Routes = () => {
               false,
               true,
             )
+          }
+        />
+
+        <Tab.Screen
+          name={Screens.JOB_STACK}
+          component={JobScreen}
+          options={({navigation, route}) =>
+            header(navigation, route, 'briefcase', 'Job')
           }
         />
       </Tab.Navigator>
