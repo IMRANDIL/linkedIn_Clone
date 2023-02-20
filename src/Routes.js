@@ -59,12 +59,34 @@ const NotificationScreen = () => {
   );
 };
 
+const header = (
+  navigation,
+  route,
+  icon,
+  title,
+  iconLeft,
+  isPostScreen,
+  isNotificationScreen,
+) => <View></View>;
+
 const Routes = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name={Screens.HOME_STACK} component={HomeScreen} />
-        <Tab.Screen name={Screens.NETWORK_STACK} component={NetworkScreen} />
+        <Tab.Screen
+          name={Screens.HOME_STACK}
+          component={HomeScreen}
+          options={({navigation, route}) =>
+            header(navigation, route, 'home', 'Home')
+          }
+        />
+        <Tab.Screen
+          name={Screens.NETWORK_STACK}
+          component={NetworkScreen}
+          options={({navigation, route}) =>
+            header(navigation, route, 'people', 'Home')
+          }
+        />
         <Tab.Screen name={Screens.JOB_STACK} component={JobScreen} />
         <Tab.Screen name={Screens.POST_STACK} component={PostScreen} />
         <Tab.Screen
