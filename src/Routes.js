@@ -11,6 +11,7 @@ import Job from './Screens/Job';
 import Post from './Screens/Post';
 import Notification from './Screens/Notification';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Colors from './Utils/Colors';
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -71,7 +72,9 @@ const header = (
 ) => ({
   title: title,
   tabBarBadge: isNotificationScreen ? 5 : null,
-  tabBarIcon: ({focused}) => <Icon name={icon} />,
+  tabBarIcon: ({focused}) => (
+    <Icon name={icon} size={28} color={focused ? Colors.BLACK : Colors.GRAY} />
+  ),
 });
 
 const Routes = () => {
