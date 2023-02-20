@@ -67,7 +67,9 @@ const header = (
   iconLeft,
   isPostScreen,
   isNotificationScreen,
-) => <View></View>;
+) => ({
+  title: title,
+});
 
 const Routes = () => {
   return (
