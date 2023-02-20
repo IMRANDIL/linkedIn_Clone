@@ -10,6 +10,7 @@ import Network from './Screens/Network';
 import Job from './Screens/Job';
 import Post from './Screens/Post';
 import Notification from './Screens/Notification';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -69,6 +70,8 @@ const header = (
   isNotificationScreen,
 ) => ({
   title: title,
+  tabBarBadge: isNotificationScreen ? 5 : null,
+  tabBarIcon: ({focused}) => <Icon name={icon} />,
 });
 
 const Routes = () => {
@@ -107,7 +110,15 @@ const Routes = () => {
           name={Screens.NOTIFICATION_STACK}
           component={NotificationScreen}
           options={({navigation, route}) =>
-            header(navigation, route, 'notifications', 'Notification')
+            header(
+              navigation,
+              route,
+              'notifications',
+              'Notifications',
+              '',
+              false,
+              true,
+            )
           }
         />
       </Tab.Navigator>
