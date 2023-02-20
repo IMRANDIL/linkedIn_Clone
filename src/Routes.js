@@ -64,6 +64,13 @@ const Routes = () => {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name={Screens.HOME_STACK} component={HomeScreen} />
+        <Tab.Screen name={Screens.NETWORK_STACK} component={NetworkScreen} />
+        <Tab.Screen name={Screens.JOB_STACK} component={JobScreen} />
+        <Tab.Screen name={Screens.POST_STACK} component={PostScreen} />
+        <Tab.Screen
+          name={Screens.NOTIFICATION_STACK}
+          component={NotificationScreen}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
