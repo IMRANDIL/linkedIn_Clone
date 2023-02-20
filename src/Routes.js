@@ -84,14 +84,29 @@ const Routes = () => {
           name={Screens.NETWORK_STACK}
           component={NetworkScreen}
           options={({navigation, route}) =>
-            header(navigation, route, 'people', 'Home')
+            header(navigation, route, 'people', 'Network')
           }
         />
-        <Tab.Screen name={Screens.JOB_STACK} component={JobScreen} />
-        <Tab.Screen name={Screens.POST_STACK} component={PostScreen} />
+        <Tab.Screen
+          name={Screens.JOB_STACK}
+          component={JobScreen}
+          options={({navigation, route}) =>
+            header(navigation, route, 'briefcase', 'Job')
+          }
+        />
+        <Tab.Screen
+          name={Screens.POST_STACK}
+          component={PostScreen}
+          options={({navigation, route}) =>
+            header(navigation, route, 'add-circle', 'Post', 'close', true)
+          }
+        />
         <Tab.Screen
           name={Screens.NOTIFICATION_STACK}
           component={NotificationScreen}
+          options={({navigation, route}) =>
+            header(navigation, route, 'notifications', 'Notification')
+          }
         />
       </Tab.Navigator>
     </NavigationContainer>
